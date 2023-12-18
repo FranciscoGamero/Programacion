@@ -1,0 +1,21 @@
+package repasoud3completo;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		String aux;
+		double precioFabrica;
+		Producto p=new Producto("Lechuga",1.2,1,true);
+		/*el prducto debe de instanciarse con los parametros, sino debemos crear un constructor vacio*/
+		System.out.println("Diga precio:");
+		aux=sc.nextLine();
+		precioFabrica=Double.parseDouble(aux);
+		System.out.println(precioFabrica);
+		System.out.println(p.getNombre());
+	}
+
+}

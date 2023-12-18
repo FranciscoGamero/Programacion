@@ -1,0 +1,27 @@
+package repasoud3completo;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		String aux;
+		Producto p3;
+		double precioFabrica;		
+		/*el prducto debe de instanciarse con los parametros, sino debemos crear un constructor vacio.*/
+		System.out.println("Diga precio:");
+		aux=sc.nextLine();
+		precioFabrica=Double.parseDouble(aux);
+		Producto p=new Producto("Lechuga",precioFabrica,1,true); // El Producto p debería ir arriba donde se declaran las variables.
+		System.out.println(p.getPrecioFabrica()); // Esto imprime el precio del producto.
+		System.out.println(precioFabrica); // MAL Esto imprime el valor de la variable que puede cambiar.
+		
+		//ESTO NO SE HACE ASÍ, primero se piden las variables y despues se crea, pero no se usan los sets.
+		p3=new Producto();
+		p3.setPrecioFabrica(precioFabrica);
+		p.toString();
+	}
+
+}

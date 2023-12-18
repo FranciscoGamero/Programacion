@@ -1,0 +1,12 @@
+package repasoud3completo;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Producto p=new Producto("Lechuga",1.2,1,true);
+		/*el prducto debe de instanciarse con los parametros, sino debemos crear un constructor vacio*/
+		System.out.println(p.getNombre());
+	}
+
+}

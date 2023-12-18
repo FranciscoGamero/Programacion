@@ -1,0 +1,90 @@
+package repasoud3completo;
+
+import java.util.Arrays;
+
+public class Tienda {
+
+	private Producto lista[];
+	private int numProducto;
+	private int numTrabajadores;
+	
+	public Tienda(Producto[] lista, int numProducto, int numTrabajadores) {
+		super();
+		this.lista = lista;
+		this.numProducto = numProducto;
+		this.numTrabajadores = numTrabajadores;
+	}
+	public Producto[] getLista() {
+		return lista;
+	}
+	public void setLista(Producto[] lista) {
+		this.lista = lista;
+	}
+	public int getNumProductos() {
+		return numProducto;
+	}
+	public void setNumProductos(int numProductos) {
+		this.numProducto = numProductos;
+	}
+	public int getNumTrabajadores() {
+		return numTrabajadores;
+	}
+	public void setNumTrabajadores(int numTrabajadores) {
+		this.numTrabajadores = numTrabajadores;
+	}
+	@Override
+	public String toString() {
+		return "Tienda [lista=" + Arrays.toString(lista) + ", numProducto=" + numProducto + ", numTrabajadores="
+				+ numTrabajadores + "]";
+	}
+	//VERBO EN INFINITIVO, SIN "Ñ" NI TILDES, QUE INDIQUE QUE HACE EL MÉTODO, 
+	//LA SEGUNDA PALABRA EMPIEZA EN MINÚSCULA Y LA PRIMERA EN MAYÚSCULA SIEMPRE.
+	
+	public void agregarProducto(Producto p) {
+		lista[numProducto]=p;
+		numProducto++;
+	}
+	
+	public void mostrarProductos() {
+		for (int i = 0; i < numProducto; i++) {
+			System.out.println(lista[i]);
+		}
+	
+	}
+	
+	public void mostrarLista(Producto lista[]) {
+		for (int i = 0; i < lista.length; i++) {
+			System.out.println(lista[i]);
+		}
+	}
+	
+	public Producto buscarPorID(int id) {
+		int i = 0;
+		boolean encontrado=false;
+		while (i<numProducto && !encontrado) {
+			Producto listaaux[] = lista;
+			if(listaaux[i].getId()==id){
+				encontrado = true;
+			} else {
+				i++;
+			}
+		}
+		if (encontrado) {
+			return lista[i];
+		} else {
+			return null;
+		}
+	}
+	
+	public Producto[] buscarPorSeccion(int seccion) {
+		int i = 0;
+		Producto encontrados[]= new Producto[numProducto];
+		while (i<numProducto) {
+				if(lista[i].getSeccion()==seccion){
+				encontrados[i]=lista[i];
+			} 
+				i++;
+			}
+		return encontrados;
+	}
+}

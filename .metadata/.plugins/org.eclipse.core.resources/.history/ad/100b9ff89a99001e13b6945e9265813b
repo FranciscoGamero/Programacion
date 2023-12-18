@@ -1,0 +1,87 @@
+package repasoud3completo;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		String aux,nombre;
+		
+		Producto p,p3,lista[];
+		
+		Tienda t;
+		
+		double precioFabrica;		
+		
+		int opcion,enVenta,seccion,tam=5,numTrabajadores=5;
+		
+	/*	System.out.println("Introduzca el tamaño:");
+		aux=sc.nextLine();
+		tam=Integer.parseInt(aux);
+		
+		System.out.println("Introduzca el número de trabajadores:");
+		aux=sc.nextLine();
+		tam=Integer.parseInt(aux);		*/
+		
+		lista=new Producto[tam];
+		
+		t= new Tienda(lista,0,numTrabajadores);
+		/*el prducto debe de instanciarse con los parametros, sino debemos crear un constructor vacio.*/
+		System.out.println("Diga precio:");
+		aux=sc.nextLine();
+		precioFabrica=Double.parseDouble(aux);
+		p=new Producto("Lechuga",precioFabrica,1,true); // El Producto p debería ir arriba donde se declaran las variables.
+		System.out.println(p.getPrecioFabrica()); // Esto imprime el precio del producto.
+		System.out.println(precioFabrica); // MAL Esto imprime el valor de la variable que puede cambiar.
+		
+	//	ESTO NO SE HACE ASÍ, primero se piden las variables y despues se crea, pero no se usan los sets.
+	//	p3=new Producto();
+	//	p3.setPrecioFabrica(precioFabrica);
+	//	Solo devuelve los datos si hay en la clase POJO un toString, sino devuelve la dirección de almacenamiento.
+		System.out.println(p);
+		
+		do {
+			System.out.println("""
+					1 - Agregar un producto.
+					2 - Mostrar productos.
+					0 - Salir.
+					""");
+			aux=sc.nextLine();
+			opcion=Integer.parseInt(aux);
+			switch(opcion) {
+				case 1:
+						System.out.println("Introduzca el nombre del producto:");
+						nombre=sc.nextLine();
+						System.out.println("Introduzca el precio de fábrica:");
+						aux=sc.nextLine();
+						precioFabrica=Double.parseDouble(aux);
+						System.out.println("Introduzca la sección:");
+						aux=sc.nextLine();
+						seccion=Integer.parseInt(aux);
+						System.out.println("Introduzca 1 si esta en venta o 0 si no");
+						aux=sc.nextLine();
+						enVenta=Integer.parseInt(aux);
+						
+						if(enVenta==1) {
+							p=new Producto(nombre,precioFabrica,seccion,true);
+							t.agregarProducto(p);
+						} else {
+							p=new Producto(nombre,precioFabrica,seccion,false);
+							t.agregarProducto(p);
+						}
+					break;
+				case 2:
+					break;
+				case 0:
+					System.out.println("Gracias por usar nuestro programa.");
+					break;
+				default:
+					System.out.println("Opción no válida.");
+			}
+		}while(opcion !=0);
+			
+	}
+
+}
