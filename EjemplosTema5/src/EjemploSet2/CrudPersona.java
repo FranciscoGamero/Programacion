@@ -27,7 +27,6 @@ public class CrudPersona {
 	}
 
 	public void buscarPorDni(String dni) {
-		boolean encontrado=false;
-		int i=0;
+
 	}
 }
