@@ -8,7 +8,4 @@ public class Gestion {
 		super();
 		this.lista = lista;
 	}
-	public void mostrarEdad() {
-		(Persona p) -> p.getEdad() ->50;
-	}
 }
