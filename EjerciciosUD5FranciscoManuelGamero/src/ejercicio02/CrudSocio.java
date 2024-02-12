@@ -47,9 +47,9 @@ public class CrudSocio {
 		}
 	}
 
-	public void borrarSocio(int id) {
+	public void borrarSocio(Socio socio) {
 		if (!listaSocio.isEmpty()) {
-			listaSocio.remove(buscarSocioPorId(id));
+			listaSocio.remove(socio);
 		}
 	}
 }
