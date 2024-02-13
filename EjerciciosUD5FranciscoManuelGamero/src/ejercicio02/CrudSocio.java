@@ -34,7 +34,12 @@ public class CrudSocio {
 		}
 		return s;
 	}
-
+	public void mostrarLista() {
+		if (!listaSocio.isEmpty()) {
+			System.out.println(listaSocio);
+		}
+	}
+	
 	public void mostrarSocio(int id) {
 		if (!listaSocio.isEmpty()) {
 			System.out.println(buscarSocioPorId(id));
@@ -47,9 +52,9 @@ public class CrudSocio {
 		}
 	}
 
-	public void borrarSocio(Socio socio) {
+	public void borrarSocio(int id) {
 		if (!listaSocio.isEmpty()) {
-			listaSocio.remove(socio);
+			listaSocio.remove(buscarSocioPorId(id));
 		}
 	}
 }

@@ -19,7 +19,7 @@ public class Principal {
 		double cuota = 200, precioPista, nuevaCuota;
 
 		Socio s1;
-		List<Socio> lista = new ArrayList();
+		List<Socio> lista = new ArrayList<Socio>();
 		CrudSocio cs = new CrudSocio(lista);
 
 		Club c = new Club(cs);
@@ -43,11 +43,12 @@ public class Principal {
 		do {
 			System.out.println("""
 					0. Salir
-					1. Añadir un socio
-					2. Mostar la información de un socio.
-					3. Modificar la cuota de un socio.
-					4. Borrar un socio.
-					5. Calcular el precio de pista para el socio.
+					1. Añadir un socio.
+					2. Mostrar lista de socios.
+					3. Mostar la información de un socio.
+					4. Modificar la cuota de un socio.
+					5. Borrar un socio.
+					6. Calcular el precio de pista para el socio.
 					""");
 			aux = sc.nextLine();
 			opcion = Integer.parseInt(aux);
@@ -64,31 +65,34 @@ public class Principal {
 				System.out.println("Introduzca la edad:");
 				aux = sc.nextLine();
 				edad = Integer.parseInt(aux);
-				cs.agregarSocio(new Socio(indice, nombre, apellidos, edad, cuota));
+				c.getCs().agregarSocio(new Socio(indice, nombre, apellidos, edad, cuota));
 				indice++;
 				break;
-			case 2:
+			case 3:
 				System.out.println("Introduzca el id del socio: ");
 				aux = sc.nextLine();
 				id = Integer.parseInt(aux);
-				System.out.println(cs.buscarSocioPorId(id));
+				System.out.println(c.getCs().buscarSocioPorId(id));
 				break;
-			case 3:
+			case 4:
 				System.out.println("Introduzca el id del socio: ");
 				aux = sc.nextLine();
 				id = Integer.parseInt(aux);
 				System.out.println("Introduzca la nueva cuota:");
 				aux = sc.nextLine();
 				nuevaCuota = Double.parseDouble(aux);
-				cs.modificarCuota(id, nuevaCuota);
+				c.getCs().modificarCuota(id, nuevaCuota);
 				break;
-			case 4:
+			case 2:
+				c.getCs().mostrarLista();
+				break;
+			case 5:
 				System.out.println("Introduzca el id del socio: ");
 				aux = sc.nextLine();
 				id = Integer.parseInt(aux);
-				cs.borrarSocio(cs.buscarSocioPorId(id));
+				c.getCs().borrarSocio(id);
 				break;
-			case 5:
+			case 6:
 				System.out.println("Introduzca el id del socio: ");
 				aux = sc.nextLine();
 				id = Integer.parseInt(aux);
