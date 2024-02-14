@@ -1,8 +1,9 @@
 package ParaMi;
 
 import java.util.List;
+import java.util.function.Predicate;
 
-public class CrudPersona{
+public class CrudPersona {
 
 	private List<Persona> lista;
 
@@ -18,14 +19,17 @@ public class CrudPersona{
 	public void setLista(List<Persona> lista) {
 		this.lista = lista;
 	}
+
 	public void mostrarMenores() {
-		IEdad menores=(i)->System.out.println(lista.get(i));
-		
+		Predicate<Persona> menores = (Persona pe) -> pe.getEdad() >=18;
 		for (int i = 0; i < lista.size(); i++) {
-			if(lista.get(i).getEdad()<=18) {
-				menores.comprobarEdad(i);
+			if (menores.test(lista.get(i))) {
+				System.out.println("Puede entrar");
+			} else {
+				System.out.println("No puede entrar");
 			}
+
 		}
-		
+
 	}
 }
