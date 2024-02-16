@@ -27,11 +27,11 @@ public class Principal {
 		corredores.add(new Corredor(7,1.11, "Emil Zatopek"));
 		corredores.add(new Corredor(2,2.35, "Carl Lewis"));
 		
-		//Mostramos todos los corredores con un for each
+		/*Mostramos todos los corredores con un for each
 		
 		for(Corredor con : corredores) {
 			System.out.println(con);
-		}
+		}*/
 		/*do {
 			System.out.println("""
 					
@@ -40,10 +40,23 @@ public class Principal {
 			opcion=Integer.parseInt(aux);
 		}while(opcion!=0);*/
 		
+		//Ordena por dorsal (Forma natural)
 		Collections.sort(corredores);
-		
+		for(Corredor con : corredores) {
+			System.out.println(con);
+		}
+		System.out.println("\nSEPARACION\n\nSEPARACION\n");
 		//Ordena la coleccion por marca
-		Collections.sort(corredores, new ComparaPorMarca());;
+		Collections.sort(corredores, new ComparaPorMarca());
+		for(Corredor con : corredores) {
+			System.out.println(con);
+		}
+		System.out.println("\nSEPARACION\n\nSEPARACION\n");
+		//Ordena la coleccion por nombre de forma inversa
+		Collections.sort(corredores, new ComparaPorNombre());
+		for(Corredor con : corredores) {
+			System.out.println(con);
+		}
 	}
 
 }

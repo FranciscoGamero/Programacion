@@ -1,6 +1,6 @@
 package EjemploOrdenar;
 
-public class Corredor {
+public class Corredor implements Comparable<Corredor>{
 
 	private int dorsal;
 	private double marca;
@@ -36,14 +36,20 @@ public class Corredor {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+
+	@Override
+	public String toString() {
+		return "Corredor [dorsal=" + dorsal + ", marca=" + marca + ", nombre=" + nombre + "]";
+	}
 
 	public int compareTo(Corredor c) { // Le pasamos un corredor y lo
 		if (this.dorsal < c.dorsal) { // compara con el que estamos llamando
 			return -1;
 		} else if (this.dorsal > c.dorsal) {
 			return 1;
-		} else {
-			return 0;
 		}
+		return 0;
 	}
+	
 }
