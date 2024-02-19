@@ -25,10 +25,21 @@ public class CrudAlumno {
 	}
 	
 	public Alumno buscarPorCodigo(int cod) {
-		Alumno aux=null;
 		for (Alumno alumn : lista) {
 			if(alumn.getCodAlumno()==cod) {
-				aux=alumn;
+				return alumn;
+			}
+		}
+		return null;
+	} //Es mas comodo el V1
+	public Alumno buscarPorCodigoV2(int cod) {
+		Alumno aux=null;
+		boolean encontrado=false;
+		Iterator <Alumno> it = lista.iterator();
+		while(it.hasNext() && !encontrado) {
+			aux = it.next();
+			if(aux.getCodAlumno()==cod) {
+				encontrado=true;
 			}
 		}
 		return aux;

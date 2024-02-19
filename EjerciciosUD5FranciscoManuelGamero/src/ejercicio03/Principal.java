@@ -25,10 +25,11 @@ public class Principal {
 		do {
 			System.out.println("""
 					0. Salir
-					1. Añadir un Alumno.
+					1. Añadir un alumno.
 					2. Mostrar un alumno.
-					3. Modificar la nota media de un alumno.
-					4. Borrar un alumno.
+					3. Mostrar todos los alumnos.
+					4. Modificar la nota media de un alumno.
+					5. Borrar un alumno.
 					""");
 			aux = sc.nextLine();
 			opcion = Integer.parseInt(aux);
@@ -54,6 +55,9 @@ public class Principal {
 				c.mostrarAlumno(codAlumno);
 				break;
 			case 3:
+				c.mostrar();
+				break;
+			case 4:
 				System.out.println("Introduzca el cod del alumno: ");
 				aux = sc.nextLine();
 				codAlumno = Integer.parseInt(aux);
@@ -62,7 +66,7 @@ public class Principal {
 				notaMedia = Double.parseDouble(aux);
 				c.modificarNotaMedia(codAlumno, codAlumno);
 				break;
-			case 4:
+			case 5:
 				System.out.println("Introduzca el cod del alumno: ");
 				aux = sc.nextLine();
 				codAlumno = Integer.parseInt(aux);
