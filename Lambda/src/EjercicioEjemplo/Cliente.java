@@ -7,16 +7,14 @@ public class Cliente {
 	private int edad;
 	private int cantidadBotellas;
 	
-	/*
-	 * El constructor no lleva la cantidad de botellas para que al crearlos esta sea por
-	 * defecto 0
-	 */
-	
-	public Cliente(String nombre, String dni, int edad) {
+
+
+	public Cliente(String nombre, String dni, int edad, int cantidadBotellas) {
 		super();
 		this.nombre = nombre;
 		this.dni = dni;
 		this.edad = edad;
+		this.cantidadBotellas = cantidadBotellas;
 	}
 
 	public String getNombre() {
@@ -49,6 +47,12 @@ public class Cliente {
 
 	public void setCantidadBotellas(int cantidadBotellas) {
 		this.cantidadBotellas = cantidadBotellas;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [nombre=" + nombre + ", dni=" + dni + ", edad=" + edad + ", cantidadBotellas="
+				+ cantidadBotellas + "]";
 	}
 	
 	

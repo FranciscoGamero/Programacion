@@ -1,12 +1,28 @@
 package EjercicioEjemplo;
 
 public class ClienteVip extends Cliente{
-	
-	public ClienteVip(String nombre, String dni, int edad) {
-		super(nombre, dni, edad);
-		// TODO Auto-generated constructor stub
-	}
 
 	private int numInvitaciones;
-	private boolean reservado;
+
+
+
+	public ClienteVip(String nombre, String dni, int edad, int cantidadBotellas, int numInvitaciones) {
+		super(nombre, dni, edad, cantidadBotellas);
+		this.numInvitaciones = numInvitaciones;
+	}
+
+	public int getNumInvitaciones() {
+		return numInvitaciones;
+	}
+
+	public void setNumInvitaciones(int numInvitaciones) {
+		this.numInvitaciones = numInvitaciones;
+	}
+
+	@Override
+	public String toString() {
+		return "ClienteVip [numInvitaciones=" + numInvitaciones + ", getNombre()=" + getNombre() + ", getDni()="
+				+ getDni() + ", getEdad()=" + getEdad() + ", getCantidadBotellas()=" + getCantidadBotellas() + "]";
+	}
+	
 }
