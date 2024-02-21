@@ -1,5 +1,7 @@
 package ejercicio04;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -25,14 +27,23 @@ public class CrudContacto {
 	}
 
 	public Contacto buscarContacto(String nombre) {
-		Set<Contacto> aux = lista.keySet();
 		Contacto encontrado = null;
-		for (Contacto c : aux) {
+		for (Contacto c : lista.keySet()) {
 			if (c.getNombre().equalsIgnoreCase(nombre)) {
 				encontrado = c;
 			}
 		}
 		return encontrado;
+	}
+	
+	public List<Contacto> buscarContactoV2(String nombre) {
+		List<Contacto> aux = new ArrayList(); //Para que devuelva una lista de nombres
+		for (Contacto c : lista.keySet()) {
+			if (c.getNombre().equalsIgnoreCase(nombre)) {
+				aux.add(c);
+			}
+		}
+		return aux;
 	}
 
 	public void borrarContacto(String nombre) {
@@ -40,9 +51,9 @@ public class CrudContacto {
 	}
 
 	public void mostrarContacto(String nombre) {
-		System.out.println(buscarContacto(nombre) + lista.get(buscarContacto(nombre)));
+		System.out.println(buscarContacto(nombre) + "\nNúmero: "+lista.get(buscarContacto(nombre)));
 	}
 	public void modificarNombre(String nombre, String Nombre) {
-		buscarContacto(nombre).setNombre(nombre);
+		buscarContactoV2(nombre);
 	}
 }

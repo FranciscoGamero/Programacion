@@ -2,8 +2,11 @@ package EjercicioEjemplo;
 
 public class ClienteVip extends Cliente{
 	
-	private int numInvitaciones;
-	private double descuento;
-	
+	public ClienteVip(String nombre, String dni, int edad) {
+		super(nombre, dni, edad);
+		// TODO Auto-generated constructor stub
+	}
 
+	private int numInvitaciones;
+	private boolean reservado;
 }
