@@ -2,7 +2,8 @@ package ejercicio05;
 
 import java.util.Comparator;
 
-public class CompararPorNombre implements Comparator<Persona>{
+//Evitar el verbo en infinitivo 
+public class ComparaPorNombre implements Comparator<Persona>{
 
 	@Override
 	public int compare(Persona p1, Persona p2) {

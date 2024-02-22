@@ -9,7 +9,8 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		List<Persona> lista = new ArrayList();
+		List<Persona> lista = new ArrayList<>();
+		
 		lista.add(new Persona("Candi", "Alcantarilla", "123456789p",22));
 		lista.add(new Persona("Pedro", "Barco", "987654321ñ",15));
 		lista.add(new Persona("Tomas", "Pérez", "13592563h",26));
@@ -28,11 +29,12 @@ public class Principal {
 		}
 		System.out.println("---------------- POR EDAD ----------------\n");
 		System.out.println("---------------- POR NOMBRE ----------------");
-		Collections.sort(lista, new CompararPorNombre()); //Ordenado por nombre alfabeticamente
+		Collections.sort(lista, new ComparaPorNombre()); //Ordenado por nombre alfabeticamente
 		for(Persona p : lista) {
 			System.out.println(p);
 		}
 		System.out.println("---------------- POR NOMBRE ----------------");
+		
 	}
 
 }
