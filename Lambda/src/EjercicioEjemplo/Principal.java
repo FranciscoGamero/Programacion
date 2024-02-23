@@ -27,24 +27,24 @@ public class Principal {
 
 		Scanner sc = new Scanner(System.in);
 		String aux, nombre, dni;
-		int opcion, opcion2, edad, cantBotellas, numInvitaciones,topeBotellas;
-		double precioBotella,porcenDescuento;
+		int opcion, opcion2, edad, cantBotellas, numInvitaciones, topeBotellas;
+		double precioBotella, porcenDescuento;
 
 		List<Cliente> lista = new ArrayList();
 		CrudCliente cC;
 		Gestion ges;
-		
-		Cliente c1,c2,c3,cAux;
+
+		Cliente c1, c2, c3, cAux;
 		// 3 clientes a modo de prueba
-		c1=new ClienteVip("Pedro", "123e", 20, 3,4);
-		c2= new Cliente("Antonio", "123d", 20,3);
-		c3= new ClienteVip("Alejandro", "123f", 20, 3,4);
+		c1 = new ClienteVip("Pedro", "123e", 20, 3, 4);
+		c2 = new Cliente("Antonio", "123d", 20, 3);
+		c3 = new ClienteVip("Alejandro", "123f", 20, 3, 4);
 		lista.add(c1);
 		lista.add(c2);
 		lista.add(c3);
 
 		cC = new CrudCliente(lista);
-		ges= new Gestion(cC);
+		ges = new Gestion(cC);
 
 		System.out.println("Introduzca el precio de cada botella");
 		aux = sc.nextLine();
@@ -88,29 +88,29 @@ public class Principal {
 				System.out.println("Introduzca la edad:");
 				aux = sc.nextLine();
 				edad = Integer.parseInt(aux);
-					System.out.println("""
-							0. Salir
-							1. Cliente normal.
-							2. Cliente vip.
-							""");
-					aux = sc.nextLine();
-					opcion2 = Integer.parseInt(aux);
-					switch (opcion2) {
-					case 0:
-						System.out.println("Gracias por usar nuestro programa.");
-						break;
-					case 1:
-						cAux=new Cliente(nombre, dni,edad, cantBotellas);
-						cC.agregarCliente(cAux);
-						break;
-					case 2:
-						cAux=new ClienteVip(nombre, dni,edad, cantBotellas, numInvitaciones);
-						cC.agregarCliente(cAux);
-						break;
-					default:
-						System.out.println("Opción no válida.");
-						break;
-					}
+				System.out.println("""
+						0. Salir
+						1. Cliente normal.
+						2. Cliente vip.
+						""");
+				aux = sc.nextLine();
+				opcion2 = Integer.parseInt(aux);
+				switch (opcion2) {
+				case 0:
+					System.out.println("Gracias por usar nuestro programa.");
+					break;
+				case 1:
+					cAux = new Cliente(nombre, dni, edad, cantBotellas);
+					cC.agregarCliente(cAux);
+					break;
+				case 2:
+					cAux = new ClienteVip(nombre, dni, edad, cantBotellas, numInvitaciones);
+					cC.agregarCliente(cAux);
+					break;
+				default:
+					System.out.println("Opción no válida.");
+					break;
+				}
 				break;
 			case 2:
 				System.out.println("Introduzca el dni del cliente: ");
@@ -136,10 +136,12 @@ public class Principal {
 			case 7:
 				System.out.println("Introduzca el dni del cliente: ");
 				dni = sc.nextLine();
-				System.out.printf("El cliente ha gastado %.2f€\n",ges.gastoscliente(cC.buscarPorDni(dni), topeBotellas, precioBotella, porcenDescuento));
+				System.out.printf("El cliente ha gastado %.2f€\n",
+						ges.gastoscliente(cC.buscarPorDni(dni), topeBotellas, precioBotella, porcenDescuento));
 				break;
 			case 8:
-				System.out.printf("El total recaudado es de %.2f€\n",ges.calcularGanancias(topeBotellas, precioBotella, porcenDescuento));
+				System.out.printf("El total recaudado es de %.2f€\n",
+						ges.calcularGanancias(topeBotellas, precioBotella, porcenDescuento));
 				break;
 			default:
 				System.out.println("Opción no válida.\n");

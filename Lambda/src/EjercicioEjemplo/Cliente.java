@@ -6,8 +6,6 @@ public class Cliente {
 	private String dni;
 	private int edad;
 	private int cantidadBotellas;
-	
-
 
 	public Cliente(String nombre, String dni, int edad, int cantidadBotellas) {
 		super();
@@ -54,6 +52,5 @@ public class Cliente {
 		return "Cliente [nombre=" + nombre + ", dni=" + dni + ", edad=" + edad + ", cantidadBotellas="
 				+ cantidadBotellas + "]";
 	}
-	
-	
+
 }

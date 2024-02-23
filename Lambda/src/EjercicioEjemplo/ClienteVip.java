@@ -1,10 +1,8 @@
 package EjercicioEjemplo;
 
-public class ClienteVip extends Cliente{
+public class ClienteVip extends Cliente {
 
 	private int numInvitaciones;
-
-
 
 	public ClienteVip(String nombre, String dni, int edad, int cantidadBotellas, int numInvitaciones) {
 		super(nombre, dni, edad, cantidadBotellas);
@@ -24,5 +22,5 @@ public class ClienteVip extends Cliente{
 		return "ClienteVip [numInvitaciones=" + numInvitaciones + ", getNombre()=" + getNombre() + ", getDni()="
 				+ getDni() + ", getEdad()=" + getEdad() + ", getCantidadBotellas()=" + getCantidadBotellas() + "]";
 	}
-	
+
 }

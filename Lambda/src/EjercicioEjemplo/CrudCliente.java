@@ -37,17 +37,20 @@ public class CrudCliente {
 			lista.remove(buscarPorDni(dni));
 		}
 	}
+
 	public void mostrarCliente(String dni) {
 		System.out.println(buscarPorDni(dni));
 	}
+
 	public void mostrarListaClientes() {
 		lista.forEach(System.out::println);
+		/* Recorre toda la lista imprimiendo cada cliente */
 	}
-	
+
 	public void mostrarListaVips() {
-		//Es un poco rollo pero para mostrar la lista con lambda
-		lista.forEach( c -> {
-			if(lista.get(lista.indexOf(c))  instanceof ClienteVip) {
+		// Es un poco rollo pero para mostrar la lista con lambda
+		lista.forEach( /* Es el atributo de Consumer */c -> {
+			if (lista.get(lista.indexOf(c)) instanceof ClienteVip) {
 				System.out.println(lista.get(lista.indexOf(c)));
 			}
 		});
