@@ -2,7 +2,7 @@ package ejercicio06;
 
 import java.util.Comparator;
 
-public class ComparaPorHoras implements Comparator<Trabajador>{
+public class ComparaPorSalario implements Comparator<Trabajador>{
 	
 	@Override
 	public int compare(Trabajador t1, Trabajador t2) {

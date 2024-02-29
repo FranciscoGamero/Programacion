@@ -16,7 +16,7 @@ public class ComparaPorNombreYHoras implements Comparator<Trabajador>{
 			}
 			
 		 */
-		ComparaPorHoras o = new ComparaPorHoras();
+		ComparaPorSalario o = new ComparaPorSalario();
 		
         if(t1.getNombre().equalsIgnoreCase(t2.getNombre()))
             return o.compare(t1, t2);

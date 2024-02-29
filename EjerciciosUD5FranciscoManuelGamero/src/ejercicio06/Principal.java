@@ -33,7 +33,7 @@ public class Principal {
 		}
 		System.out.println("---------------- POR SALARIO ----------------\n");
 		System.out.println("---------------- POR HORAS TRABAJADAS ----------------");
-		Collections.sort(lista, new ComparaPorHoras()); //Ordenado por horas trabajadas
+		Collections.sort(lista, new ComparaPorSalario()); //Ordenado por horas trabajadas
 		for(Trabajador t : lista) {
 			System.out.println(t);
 		}
