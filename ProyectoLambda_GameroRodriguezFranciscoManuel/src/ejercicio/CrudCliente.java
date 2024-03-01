@@ -1,4 +1,4 @@
-package EjercicioEjemplo;
+package ejercicio;
 
 import java.util.List;
 

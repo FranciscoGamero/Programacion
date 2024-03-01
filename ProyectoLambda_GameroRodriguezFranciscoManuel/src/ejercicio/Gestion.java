@@ -1,4 +1,4 @@
-package EjercicioEjemplo;
+package ejercicio;
 
 import java.util.function.Predicate;
 
@@ -41,3 +41,4 @@ public class Gestion {
 		return total;
 	}
 }
+

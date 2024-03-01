@@ -1,4 +1,4 @@
-package EjercicioEjemplo;
+package ejercicio;
 
 public class ClienteVip extends Cliente {
 
