@@ -3,6 +3,8 @@ package ejercicio02;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.function.Supplier;
 
 public class ListaPalabras {
 
@@ -21,15 +23,24 @@ public class ListaPalabras {
 		this.lista = lista;
 	}
 	
-	public void mostrarLista() {
-		lista.forEach(p -> System.out.println(p));
+	public void mostrarLista(List<Palabra> listaExterna) {
+		listaExterna.forEach(p -> System.out.println(p));
 	}
-	public void ordenarAlfabeticamente() {
-		Comparator<Palabra> ordenar = Comparator.comparing(Palabra::getPalabra);
-		lista.stream().sorted(ordenar);
+	public List<Palabra> ordenarAlfabeticamente() {
+		 Comparator<Palabra> ordenar = Comparator.comparing(Palabra::getPalabra);
+		 
+		 return lista.stream()
+		.sorted(ordenar).toList();
 	}
-	public Palabra buscarPalabra(String palabraExterna) {
+	public List<Palabra> buscarPalabra(String palabraExterna) {
 		return lista.stream()
-				.filter(p -> p.getPalabra().equalsIgnoreCase(palabraExterna));
+				.filter(p -> p.getPalabra().equalsIgnoreCase(palabraExterna))
+				.toList();
+	}
+	
+	//Una lista con las primeras letras y la concatenamos en el collect
+	public Palabra crearPalabra() {
+		return lista.stream()
+				.collect();
 	}
 }

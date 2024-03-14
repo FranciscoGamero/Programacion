@@ -18,10 +18,15 @@ public class Principal {
 		lista.add(new Palabra("Zamora"));
 		
 		ListaPalabras ges = new ListaPalabras(lista);
-		ges.mostrarLista();
-		System.out.println("\n\n\n");
-		ges.ordenarAlfabeticamente();
-		ges.mostrarLista();
+		/*ges.mostrarLista(ges.getLista());
+		System.out.println("\n\n\n  ");
+		ges.mostrarLista(ges.ordenarAlfabeticamente());*/
+		
+		/*
+		ges.mostrarLista(ges.buscarPalabra("Coche"));
+		ges.mostrarLista(ges.buscarPalabra("sñlkdjklj"));
+		*/
+		
 		
 		}
 }
