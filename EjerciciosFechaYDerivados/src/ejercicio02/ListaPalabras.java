@@ -39,8 +39,11 @@ public class ListaPalabras {
 	}
 	
 	//Una lista con las primeras letras y la concatenamos en el collect
-	public Palabra crearPalabra() {
+	/*public Palabra crearPalabra() {
 		return lista.stream()
-				.collect();
+				.collect(() -> lista.forEach(p -> p.getPalabra().charAt(0)));
+	}*/
+	public char primerLetra(String palabraExterna) {
+		return palabraExterna.charAt(0);
 	}
 }

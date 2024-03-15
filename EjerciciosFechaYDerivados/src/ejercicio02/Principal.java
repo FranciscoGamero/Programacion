@@ -26,7 +26,7 @@ public class Principal {
 		ges.mostrarLista(ges.buscarPalabra("Coche"));
 		ges.mostrarLista(ges.buscarPalabra("sñlkdjklj"));
 		*/
-		
+		System.out.println(ges.primerLetra("Coche"));
 		
 		}
 }
