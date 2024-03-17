@@ -83,7 +83,6 @@ public class Carrera {
 			if (listaCorredores[i].getCategoria() == seccion) {
 				listaaux[i] = listaCorredores[i];
 			}
-			i++;
 		}
 		return listaaux;
 	}

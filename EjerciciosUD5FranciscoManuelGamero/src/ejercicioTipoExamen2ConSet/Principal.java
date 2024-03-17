@@ -1,25 +1,26 @@
-package ejercicioTipoExamen2;
+package ejercicioTipoExamen2ConSet;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
+import java.util.HashSet;
+
 import java.util.Scanner;
 
 public class Principal {
 
 	public static void main(String[] args) {
-
 		Scanner sc = new Scanner(System.in);
 		double capacidadTrastero, precioTrastero;
 		String aux, direccion;
 		int numTrastero = 4, opcion, opcion2;
+		boolean estadoTrastero;
 
-		Oficina lista = new Oficina(new ArrayList<Trastero>());
-		lista.agregarTrastero(new Trastero(50, "hola123", 2, 2500, true));
+		Oficina lista = new Oficina(new HashSet<Trastero>());
+		
+		lista.agregarTrastero(new Trastero(50, "hola123", 0, 500, true)); 
 		lista.agregarTrastero(new Trastero(10, "hola321", 1, 120, true));
-		lista.agregarTrastero(new Trastero(150, "adios123", 3, 1500, false));
-		lista.agregarTrastero(new Trastero(200, "adios321", 0, 500, false));
-
+		lista.agregarTrastero(new Trastero(150, "adios123", 2, 1500, false));
+		lista.agregarTrastero(new Trastero(200, "adios321", 3, 2500, false));
+		
 		System.out.println("-".repeat(50));
 		System.out.println("Bienvenido al Gestor de Trasteros");
 		System.out.println("-".repeat(50));
@@ -33,9 +34,7 @@ public class Principal {
 					4 - Mostrar el trastero mas caro.
 					5 - Eliminar un trastero.
 					6 - Modificar el precio de un trastero.
-					7 - Ordenar por numero de trastero.
-					8 - Ordenar por precio (de mayor a menor).
-					9 - Mostrar trasteros no ocupados.
+					7 - Mostrar trasteros no ocupados.
 					""");
 			aux = sc.nextLine();
 			opcion = Integer.parseInt(aux);
@@ -70,16 +69,16 @@ public class Principal {
 				} while (opcion2 != 0);
 				break;
 			case 2:
-				lista.mostrarLista();				
+				lista.mostrarLista(lista.getLista());				
 				break;
 			case 3:
 				System.out.println("Introduzca el precio del trastero: ");
 				aux = sc.nextLine();
 				precioTrastero = Double.parseDouble(aux);
-				System.out.println(lista.buscarPorPrecio(precioTrastero));
+				lista.mostrarLista(lista.buscarPorPrecio(precioTrastero));
 				break;
 			case 4:
-				lista.buscarElMasCaro();
+				System.out.println(lista.buscarMasCaro());
 				break;
 			case 5:
 				System.out.println("Inserte el numero del trastero: ");
@@ -97,19 +96,13 @@ public class Principal {
 				lista.modificarPrecio(numTrastero, precioTrastero);
 				break;
 			case 7:
-				Collections.sort(lista.getLista());
-				break;
-			case 8:
-				Collections.sort(lista.getLista(), new ComparaPorPrecio());
-				break;
-			case 9:
 				lista.mostrarNoOcupados();
 				break;
 			default:
 				System.out.println("Opción no válida.");
 				break;
 			}
-		} while (opcion != 0);
-	}
+	} while(opcion!=0);
 
+}
 }
