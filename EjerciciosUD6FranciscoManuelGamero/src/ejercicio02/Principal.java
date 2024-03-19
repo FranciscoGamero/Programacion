@@ -22,6 +22,7 @@ public class Principal {
 				opcion = Integer.parseInt(aux);
 				switch (opcion) {
 				case 0:
+					salida=true;
 					System.out.println("Gracias por usar nuestra calculadora.");
 					break;
 				case 1:
@@ -29,14 +30,15 @@ public class Principal {
 					aux = sc.nextLine();
 					grados = Double.parseDouble(aux);
 					if (grados > limiteGrados) {
-						System.out.printf("Serían: %.2f grados Fahrenheit\n", grados * 1.8 + 32);
+						System.out.printf("Serían %.2f grados Fahrenheit\n", grados * 1.8 + 32);
 					} else {
 						throw new AvisoTemperatura("No puede haber temperaturas menores a -273 ºC");
 					}
 					break;
+				default:
+					System.out.println("Opción no válida.");
+					break;
 				}
-				
-				salida=true;
 				
 			} catch (NumberFormatException e) {
 				System.out.println("No está introduciendo un número");
@@ -44,8 +46,10 @@ public class Principal {
 				System.out.println(e.getMessage());
 			} catch (RuntimeException e) {
 				System.out.println("Error inesperado");
+				
 			}
 		} while (!salida);
+		sc.close();//A partir de ahora cerrar los scanners
 	}
 
 }
