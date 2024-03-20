@@ -3,14 +3,16 @@ package ejercicio03;
 
 public class CEcuacion2Grado {
 
-	public double calcularEcuacion(double a, double b, double c) throws EcuacionDegenerada, DiscriminanteNegativo{
+	public void calcularEcuacion(double a, double b, double c) throws EcuacionDegenerada, DiscriminanteNegativo{
+		 double discriminante = (Math.pow(b, 2)- 4 * a * c);
 		if(a==0 && b==0) {
 			throw new EcuacionDegenerada("La ecuación es degenerada");
-		} else if ((Math.pow(b, 2)-4*a*c)<0){
+		} else if (discriminante<0){
 			throw new DiscriminanteNegativo("La raíz cuadrada es negativa");
 		}
 		else {
-			return (-b*(Math.sqrt(Math.pow(b, 2)-4*a*c)))/2*a;
+			System.out.printf("Las soluciones de la ecuacion son: %.2f y %.2f\n",
+					(-b + Math.sqrt(discriminante))/(2*a),(-b - Math.sqrt(discriminante))/(2*a)); 
 		}
 	}
 }
