@@ -7,7 +7,7 @@ public class GestionReserva {
 	public void generarReserva(LocalDate fechaExterna) throws ReservaPasada{
 		
 		if(fechaExterna.isBefore(LocalDate.now())){
-			throw new ReservaPasada("Hola");
+			throw new ReservaPasada("No puedes hacer una reserva de un dia previo");
 		} else {
 			System.out.println("Reserva realizada");
 		}

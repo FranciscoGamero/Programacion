@@ -1,6 +1,6 @@
 package excepciones2;
 
-public class ReservaPasada extends Exception{
+public class ReservaPasada extends RuntimeException{
 
 	/**
 	 * 
