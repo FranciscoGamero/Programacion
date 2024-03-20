@@ -60,7 +60,7 @@ public class Oficina{
 		Trastero aux = null;
 		if (!lista.isEmpty()) {
 			for (Trastero t : lista) {
-				if (aux.getPrecio()>t.getPrecio()) {
+				if (aux.getPrecio()<t.getPrecio()) {
 					aux = t;
 				}
 			}

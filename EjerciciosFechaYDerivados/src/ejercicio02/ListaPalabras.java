@@ -36,11 +36,20 @@ public class ListaPalabras {
 	}
 	
 	//Una lista con las primeras letras y la concatenamos en el collect
-	/*public Palabra crearPalabra() {
-		return lista.stream()
-				.collect(() -> lista.forEach(p -> p.getPalabra().charAt(0)));
-	}*/
-	public char primerLetra(String palabraExterna) {
-		return palabraExterna.charAt(0);
+	public String crearPalabra() {
+	        return lista.stream()
+	                .map(palabra -> String.valueOf(palabra.getPalabra().charAt(0)))
+	                //"" es el valor inicial, y (agregar, letra) es una función lambda que concatena lo obtenido en el map al valor inicial
+	                .reduce("", (agregar, letra) -> agregar + letra); 
+	}
+	public void borrarImpares() {
+		lista.removeAll(lista.stream()
+				.filter(p -> p.getPalabra().length()%2!=0)
+				.toList());
+	}
+	public void pasarAMayusculas() {
+        lista = lista.stream()
+                .map(p -> new Palabra(p.getPalabra().toUpperCase()))
+                .collect(Collectors.toList());
 	}
 }
