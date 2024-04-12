@@ -2,5 +2,5 @@ package clasesPojo;
 
 public enum TipoArma {
 
-	Pistola,Subfusil;
+	Pistola, Subfusil,Fusiles,Escopetas,Francotiradores;
 }
